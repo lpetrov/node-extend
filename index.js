@@ -23,7 +23,7 @@ var isPlainObject = function isPlainObject(obj) {
 	return key === undefined || hasOwn.call(obj, key);
 };
 
-module.exports = function extend() {
+exports = function extend() {
 	'use strict';
 	var options, name, src, copy, copyIsArray, clone,
 		target = arguments[0],
@@ -78,4 +78,6 @@ module.exports = function extend() {
 	// Return the modified object
 	return target;
 };
-
+if (typeof module !== 'undefined' && module.exports) {
+	module.exports = exports;
+}
